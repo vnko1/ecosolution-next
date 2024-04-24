@@ -1,0 +1,33 @@
+.header {
+  @apply fixed py-[36px] w-full bg-transparent z-40 transition-colors duration-150;
+  &--accent {
+    @apply bg-white;
+  }
+
+  &__wrapper {
+    @apply flex justify-between items-center;
+  }
+}
+
+.wrapper {
+  @apply pt-2 flex gap-[12px] items-center;
+}
+
+.button {
+  &-menu {
+    @apply bg-lightGreen text-black;
+
+    &:hover,
+    &:focus {
+      @apply bg-green;
+    }
+  }
+
+  &-touch {
+    @apply hidden tablet:flex  gap-[12px];
+
+    .icon {
+      @apply w-[14px] h-[14px] -rotate-90;
+    }
+  }
+}

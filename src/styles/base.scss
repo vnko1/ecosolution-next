@@ -1,0 +1,53 @@
+html {
+  @apply text-lg;
+}
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+body {
+  @apply bg-grey font-fira font-normal text-base leading-normal text-darkGreen;
+}
+
+button {
+  @apply border-transparent;
+}
+
+ul,
+ol {
+  @apply list-none;
+}
+
+a {
+  @apply inline-block cursor-pointer no-underline;
+}
+
+button {
+  @apply inline-block;
+}
+
+#wrapper {
+  @apply overflow-hidden max-w-full w-full min-h-screen flex flex-col;
+}
+
+a:not([class]) {
+  @apply no-underline cursor-pointer;
+
+  &:hover,
+  &:focus {
+    @apply underline;
+  }
+}
+
+.section {
+  @apply pt-3-lg tablet:pt-[100px] laptop:pt-[120px];
+}
+
+.container {
+  @apply w-full mx-auto px-2-xs max-w-full tablet:max-w-[768px] tablet:px-3-xs laptop:max-w-[1440px] laptop:px-[100px];
+}
+
+.no-scroll {
+  @apply overflow-hidden;
+}

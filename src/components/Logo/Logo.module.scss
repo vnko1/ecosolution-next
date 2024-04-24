@@ -1,0 +1,24 @@
+.logo {
+  @apply flex gap-0-sm items-center;
+  & > svg {
+    @apply place-self-center pt-2;
+  }
+  &__name {
+    @apply font-oswald text-[32px] font-medium transition-colors duration-150;
+    letter-spacing: -1.32px;
+
+    &:hover,
+    &:focus {
+      @apply text-green;
+    }
+  }
+
+  &__text {
+    @apply text-xs leading-[9px] pt-2;
+    letter-spacing: -0.4px;
+
+    &--accent {
+      @apply text-green;
+    }
+  }
+}

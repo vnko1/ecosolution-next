@@ -1,0 +1,76 @@
+.backdrop {
+  @apply fixed z-50 w-screen h-screen px-2-xs py-[36px] top-0 left-0 bg-[#173d3340] backdrop-blur-[2px] transition-all duration-300  opacity-0;
+  @media screen and (min-height: 0px) and (max-height: 399px) {
+    padding: 0;
+  }
+
+  &.active {
+    @apply opacity-100;
+  }
+}
+
+.modal {
+  @apply w-full h-full p-[24px] tablet:max-w-[320px] rounded-[24px] backdrop-blur-[12.5px] bg-[#173d33bf] tablet:ml-auto flex flex-col justify-between transition-all duration-300 delay-100 translate-x-full;
+
+  @media screen and (min-height: 0px) and (max-height: 399px) {
+    border-radius: 0;
+  }
+
+  &.active {
+    @apply translate-x-0;
+  }
+}
+
+.body {
+  &__header {
+    @apply w-full pb-0-md border-b;
+  }
+
+  &__nav-list {
+    @apply mt-[24px] flex flex-col gap-0-md;
+  }
+
+  &__soc-list {
+    @apply flex gap-0-md;
+  }
+}
+
+.close-button {
+  @apply flex gap-0-sm items-center bg-transparent outline-none text-white text-lg transition-colors duration-150;
+
+  &:hover,
+  &:focus {
+    @apply text-green;
+  }
+
+  & > span {
+    @apply pt-[0.5px];
+  }
+}
+
+.nav {
+  &-button {
+    @apply text-[#ffffff40] text-xl;
+    &.active {
+      @apply text-green;
+    }
+
+    &:hover,
+    &:focus {
+      @apply text-white;
+    }
+  }
+
+  &-icon {
+    @apply -rotate-[225deg];
+  }
+}
+
+.soc-link {
+  @apply text-white transition-colors duration-150;
+
+  &:hover,
+  &:focus {
+    @apply text-green;
+  }
+}
