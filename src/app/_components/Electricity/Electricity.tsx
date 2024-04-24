@@ -1,6 +1,7 @@
 "use client";
 import { FC, useEffect, useState } from "react";
 
+import { useNav } from "@/hooks";
 import { SectionsId } from "@/types";
 import { getDataFromLS, setDataToLS } from "@/utils";
 
@@ -9,6 +10,7 @@ import styles from "./Electricity.module.scss";
 const initialValue = 1134147814;
 
 const Electricity: FC = () => {
+  const electricityRef = useNav(SectionsId.ELECTRICITY);
   const [eValue, setEValue] = useState<null | number>(null);
 
   useEffect(() => {
@@ -37,7 +39,11 @@ const Electricity: FC = () => {
   }, [eValue]);
 
   return (
-    <section id={SectionsId.ELECTRICITY} className="section">
+    <section
+      id={SectionsId.ELECTRICITY}
+      className="section"
+      ref={electricityRef}
+    >
       <h2 className={styles["title"]}>
         Electricity we produced <br /> for all time
       </h2>

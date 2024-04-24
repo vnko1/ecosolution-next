@@ -1,4 +1,6 @@
+"use client";
 import { FC } from "react";
+import { useNav } from "@/hooks";
 
 import { IconEnum, SectionsId } from "@/types";
 import { NavLink, Logo, UIButton } from "@/components";
@@ -6,9 +8,14 @@ import { NavLink, Logo, UIButton } from "@/components";
 import styles from "./Footer.module.scss";
 
 const Footer: FC = () => {
+  const footerRef = useNav(SectionsId.FOOTER);
   return (
     <div className="container">
-      <footer id={SectionsId.FOOTER} className={styles["footer"]}>
+      <footer
+        id={SectionsId.FOOTER}
+        className={styles["footer"]}
+        ref={footerRef}
+      >
         <div className={styles["footer__container-1"]}>
           <Logo />
         </div>

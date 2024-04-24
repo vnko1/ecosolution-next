@@ -1,13 +1,16 @@
+"use client";
 import { FC } from "react";
 
 import { IconEnum, SectionsId } from "@/types";
 import { UIButton } from "@/components";
 
 import styles from "./Hero.module.scss";
+import { useNav } from "@/hooks";
 
 const Hero: FC = () => {
+  const heroRef = useNav(SectionsId.HERO);
   return (
-    <section id={SectionsId.HERO} className={styles["hero"]}>
+    <section id={SectionsId.HERO} className={styles["hero"]} ref={heroRef}>
       <div className={styles["hero__content"]}>
         <h1 className={styles["title"]}>RENEWABLE ENERGY For any task</h1>
         <div className={styles["content"]}>

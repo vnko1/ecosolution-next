@@ -4,13 +4,13 @@ import { createPortal } from "react-dom";
 import cn from "classnames";
 
 import { useSwipe } from "@/hooks";
+import { scrollTo } from "@/utils";
 import { useAppContext } from "@/context";
 import { IconEnum } from "@/types";
 import { Icon, UIButton } from "@/components";
 
 import { MenuProps } from "./Menu.type";
 import styles from "./Menu.module.scss";
-import { useRouter } from "next/navigation";
 
 const navItem = ["Main", "About", "Cases", "FAQ", "Contact Us"];
 
@@ -23,7 +23,6 @@ const Menu: FC<MenuProps> = ({ setActive, active }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const { activeLinkId } = useAppContext();
-  const router = useRouter();
 
   const closeMenu = () => {
     setIsVisible(false);
@@ -76,7 +75,7 @@ const Menu: FC<MenuProps> = ({ setActive, active }) => {
 
     const onHandleNavClick = (id: string) => {
       closeMenu();
-      router.push(`/#${id}`);
+      scrollTo(id);
     };
 
     return (

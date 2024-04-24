@@ -3,6 +3,7 @@ import { FC, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "@/extensions/number.extensions";
 
+import { useNav } from "@/hooks";
 import { IconEnum, SectionsId } from "@/types";
 import { UIButton } from "@/components";
 import data from "@/lib/cases.json";
@@ -11,6 +12,7 @@ import { Slider } from "./components";
 import styles from "./Cases.module.scss";
 
 const Cases: FC = () => {
+  const casesRef = useNav(SectionsId.CASES);
   const [activeStep, setActiveStep] = useState(1);
   const maxSteps = data.length;
 
@@ -25,7 +27,7 @@ const Cases: FC = () => {
   };
 
   return (
-    <section id={SectionsId.CASES} className="section">
+    <section id={SectionsId.CASES} className="section" ref={casesRef}>
       <div className={styles["cases__container"]}>
         <div className={styles["cases__title"]}>
           <h2 className={styles["title"]}>Successful cases of our company</h2>

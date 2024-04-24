@@ -1,14 +1,17 @@
+"use client";
 import { FC } from "react";
 
 import { SectionsId } from "@/types";
+import { useNav } from "@/hooks";
 
 import { Values } from "./components";
 
 import styles from "./About.module.scss";
 
 const About: FC = () => {
+  const aboutRef = useNav(SectionsId.ABOUT);
   return (
-    <section id={SectionsId.ABOUT} className="section">
+    <section id={SectionsId.ABOUT} className="section" ref={aboutRef}>
       <div className={styles["about__container"]}>
         <div className={styles["container__title"]}>
           <h2 className={styles["title"]}>Main values of our company</h2>
