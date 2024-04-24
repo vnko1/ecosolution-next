@@ -14,7 +14,7 @@ const Header: FC = () => {
   const [menuIsActive, setMenuIsActive] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
 
-  const onHandleTouchBtnClick = () => {
+  const onHandleNavBtnClick = () => {
     scrollTo(SectionsId.CONTACT_US);
   };
 
@@ -59,7 +59,7 @@ const Header: FC = () => {
             />
 
             <UIButton
-              onClick={onHandleTouchBtnClick}
+              onClick={onHandleNavBtnClick}
               classNames={styles["button-touch"]}
               variant="contained"
               iconSize={7}

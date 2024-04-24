@@ -1,4 +1,11 @@
-import { About, Cases, Electricity, Hero, Questions } from "./_components";
+import {
+  About,
+  Cases,
+  ContactUs,
+  Electricity,
+  Hero,
+  Questions,
+} from "./_components";
 
 export default function Home() {
   return (
@@ -9,6 +16,7 @@ export default function Home() {
         <Electricity />
         <Cases />
         <Questions />
+        <ContactUs />
       </div>
     </main>
   );
