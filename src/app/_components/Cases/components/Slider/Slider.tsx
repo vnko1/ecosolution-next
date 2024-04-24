@@ -54,7 +54,7 @@ const Slider: FC<SliderProps> = ({ values, setStep, carouselRef }) => {
       itemClass={styles["slider__item"]}
     >
       {values.map((el, i) => (
-        <Case {...el} key={i} />
+        <Case key={i} {...el} />
       ))}
     </Carousel>
   );

@@ -1,7 +1,7 @@
 .slider {
-  @apply items-stretch tablet:pl-[6px] tablet:gap-1-sm laptop:gap-2-xs laptop_md:pl-1-sm laptop_md:gap-2-md;
+  @apply items-stretch tablet:pl-[6px] tablet:gap-1-sm laptop:gap-2-xs;
 
   &__item {
-    @apply w-full tablet:max-w-[342px] laptop:max-w-[540px] laptop_md:max-w-[596px];
+    @apply w-full tablet:max-w-[342px] laptop:max-w-[600px];
   }
 }

@@ -1,6 +1,8 @@
 import { FC } from "react";
-import { IconEnum } from "@/src/types";
-import { UIButton } from "@/src/components";
+import Image from "next/image";
+import { IconEnum } from "@/types";
+import { UIButton } from "@/components";
+
 import { CaseProps } from "./Case.type";
 import styles from "./Case.module.scss";
 
@@ -8,7 +10,7 @@ const Case: FC<CaseProps> = ({ image, alt, title, text, date }) => {
   return (
     <div className={styles["case"]}>
       <div className={styles["case__image-thumb"]}>
-        <img src={image} alt={alt} loading="lazy" width="596" height="336" />
+        <Image src={image} alt={alt} loading="lazy" width={596} height={336} />
       </div>
       <div className={styles["case__content"]}>
         <div className={styles["content__top"]}>

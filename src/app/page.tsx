@@ -1,4 +1,4 @@
-import { About, Electricity, Hero } from "./_components";
+import { About, Cases, Electricity, Hero } from "./_components";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
         <Hero />
         <About />
         <Electricity />
+        <Cases />
       </div>
     </main>
   );

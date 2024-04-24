@@ -1,10 +1,11 @@
 "use client";
 import { FC, useRef, useState } from "react";
 import Carousel from "react-multi-carousel";
+import "@/extensions/number.extensions";
 
 import { IconEnum, SectionsId } from "@/types";
 import { UIButton } from "@/components";
-import data from "@/lib/values.json";
+import data from "@/lib/cases.json";
 
 import { Slider } from "./components";
 import styles from "./Cases.module.scss";
@@ -24,7 +25,7 @@ const Cases: FC = () => {
   };
 
   return (
-    <section id={SectionsId.CASES} className="section-paddings">
+    <section id={SectionsId.CASES} className="section">
       <div className={styles["cases__container"]}>
         <div className={styles["cases__title"]}>
           <h2 className={styles["title"]}>Successful cases of our company</h2>
@@ -32,7 +33,7 @@ const Cases: FC = () => {
         <div className={styles["cases__data"]}>
           <div className={styles["data"]}>
             <p className={styles["step-value"]}>
-              {activeStep.addLeadingZero()}{" "}
+              {activeStep.addLeadingZero()}
               <span>/ {maxSteps.addLeadingZero()}</span>
             </p>
             <div className={styles["data__button"]}>
