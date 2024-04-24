@@ -1,0 +1,19 @@
+.contact-us {
+  @apply pb-3-lg tablet:pb-[100px] laptop:pb-[120px];
+
+  &__wrapper {
+    @apply tablet:flex;
+  }
+}
+
+.contacts {
+  @apply tablet:w-1/2;
+}
+
+.form {
+  @apply pt-2-md tablet:pt-0 tablet:w-1/2;
+}
+
+.title {
+  @apply text-center mb-2-md tablet:mb-4-xs laptop:mb-[120px];
+}

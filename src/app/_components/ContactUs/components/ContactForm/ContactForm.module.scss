@@ -1,0 +1,22 @@
+.form {
+  @apply bg-lightGrey px-1-sm py-3-lg tablet:px-2-md laptop:p-4-xl;
+
+  &__field {
+    @apply flex flex-col gap-2-xl laptop:gap-3-sm;
+  }
+
+  &__wrapper {
+    @apply relative;
+  }
+}
+
+.button {
+  @apply ml-auto mt-1-lg laptop:mt-2-xl;
+}
+.icon {
+  @apply rotate-180;
+}
+
+.message {
+  @apply absolute -bottom-6 right-0;
+}
