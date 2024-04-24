@@ -7,5 +7,5 @@ export const useGetScreenSize = () => {
     screen.current = window?.innerWidth;
   }, []);
 
-  return [screen.current];
+  return screen.current;
 };

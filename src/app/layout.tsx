@@ -3,7 +3,7 @@ import { Fira_Sans, Oswald } from "next/font/google";
 
 import { AppProvider } from "@/context";
 import "@/styles/index.scss";
-import { Header } from "./_components";
+import { Footer, Header } from "./_components";
 
 const fira_sans = Fira_Sans({
   subsets: ["latin"],
@@ -38,6 +38,7 @@ export default function RootLayout({
         <AppProvider>
           <Header />
           {children}
+          <Footer />
         </AppProvider>
       </body>
     </html>

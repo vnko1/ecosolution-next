@@ -10,7 +10,7 @@ const enableSwipeToScreen = 769;
 export const useSwipe = (eventHandler: () => void) => {
   const [touchStart, setTouchStart] = useState(0);
 
-  const [screenSize] = useGetScreenSize();
+  const screenSize = useGetScreenSize();
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) =>

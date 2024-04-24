@@ -1,1 +1,1 @@
-export { default as scrollTo } from "./scrollTo";
+export * from "./localStorage";

@@ -4,7 +4,6 @@ import cn from "classnames";
 import { Icon } from "..";
 import { NavLinkProps } from "./NavLink.type";
 import styles from "./NavLink.module.scss";
-import Link from "next/link";
 
 const NavLink: FC<NavLinkProps> = ({
   link = "#",
@@ -21,7 +20,7 @@ const NavLink: FC<NavLinkProps> = ({
     classNames
   );
   return (
-    <Link
+    <a
       {...props}
       target={target}
       style={{ textDecoration: "none" }}
@@ -32,7 +31,7 @@ const NavLink: FC<NavLinkProps> = ({
         <Icon icon={icon} size={size} />
       </span>
       {children}
-    </Link>
+    </a>
   );
 };
 

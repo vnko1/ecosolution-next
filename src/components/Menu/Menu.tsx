@@ -3,7 +3,6 @@ import { FC, MouseEvent, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import cn from "classnames";
 
-import { scrollTo } from "@/utils";
 import { useSwipe } from "@/hooks";
 import { useAppContext } from "@/context";
 import { IconEnum } from "@/types";
@@ -11,6 +10,7 @@ import { Icon, UIButton } from "@/components";
 
 import { MenuProps } from "./Menu.type";
 import styles from "./Menu.module.scss";
+import { useRouter } from "next/navigation";
 
 const navItem = ["Main", "About", "Cases", "FAQ", "Contact Us"];
 
@@ -23,6 +23,7 @@ const Menu: FC<MenuProps> = ({ setActive, active }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const { activeLinkId } = useAppContext();
+  const router = useRouter();
 
   const closeMenu = () => {
     setIsVisible(false);
@@ -68,13 +69,14 @@ const Menu: FC<MenuProps> = ({ setActive, active }) => {
 
   const renderNavButtons = (value: string) => {
     const id = value.split(" ").join("_").toLowerCase();
+
     const navButtonClassNames = cn(styles["nav-button"], {
       [styles["active"]]: activeLinkId === id,
     });
 
     const onHandleNavClick = (id: string) => {
       closeMenu();
-      scrollTo(id);
+      router.push(`/#${id}`);
     };
 
     return (

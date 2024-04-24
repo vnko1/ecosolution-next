@@ -1,0 +1,59 @@
+.footer {
+  @apply grid border-t border-t-green py-2-md tablet:py-4-xs grid-cols-[90%_10%] grid-rows-5 items-center tablet:gap-0-md  tablet:grid-rows-2 tablet:grid-cols-[minmax(366px,_1fr)_minmax(182px,_1fr)_minmax(130px,_1fr)] laptop:grid-cols-[minmax(620px,_1fr)_minmax(167px,_1fr)_minmax(130px,_1fr)];
+
+  &__container {
+    &-1 {
+      @apply tablet:order-1;
+    }
+    &-2 {
+      @apply tablet:order-3 ml-auto;
+    }
+    &-3 {
+      @apply col-span-3 flex justify-center tablet:col-span-1 tablet:order-2 tablet:justify-start;
+    }
+    &-4 {
+      @apply col-span-3 flex justify-center tablet:col-span-1 tablet:order-4 tablet:justify-start;
+    }
+    &-5 {
+      @apply col-span-3 flex justify-center tablet:col-span-1 tablet:order-5 tablet:justify-start;
+    }
+    &-6 {
+      @apply col-span-3 flex justify-center tablet:justify-end tablet:col-span-1 tablet:order-6;
+    }
+  }
+}
+
+.button {
+  &.btn {
+    &.icon {
+      @apply bg-green text-darkGreen max-h-[32px] h-[32px] w-[32px];
+
+      &:hover,
+      &:focus {
+        @apply bg-darkGreen;
+
+        & > span {
+          @apply text-green;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    @apply rotate-90;
+  }
+}
+
+.links {
+  @apply flex gap-0-md;
+}
+
+.icon {
+  &.soc-icon {
+    @apply p-0;
+  }
+}
+
+.text {
+  @apply tracking-[-0.64px];
+}

@@ -1,0 +1,23 @@
+.about {
+  &__container {
+    @apply flex flex-col gap-2-md mb-3-lg tablet:flex-row tablet:gap-0 tablet:justify-between tablet:mb-[100px] laptop:mb-[122px];
+  }
+}
+
+.container {
+  &__title {
+    @apply w-full tablet:w-1/2 tablet:border-r-[0.5px] tablet:border-r-green;
+  }
+
+  &__text {
+    @apply w-full tablet:w-1/2 tablet:border-l-[0.5px] tablet:border-l-green;
+  }
+}
+
+.title {
+  @apply w-full max-w-[320px] tablet:max-w-[272px] laptop:max-w-[364px];
+}
+
+.text {
+  @apply w-full text-justify tablet:ml-auto tablet:max-w-[342px] laptop:max-w-[458px];
+}

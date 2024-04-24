@@ -1,18 +1,16 @@
 "use client";
 import { FC, useEffect, useState } from "react";
+
 import cn from "classnames";
 
-import { useNav } from "@/hooks";
-import { scrollTo } from "@/utils";
 import { IconEnum, SectionsId } from "@/types";
 import { Logo, Menu, UIButton } from "@/components";
+
 import styles from "./Header.module.scss";
 
 const Header: FC = () => {
   const [menuIsActive, setMenuIsActive] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
-
-  const headerRef = useNav(SectionsId.HEADER);
 
   useEffect(() => {
     const onHandleScroll = () => {
@@ -32,20 +30,12 @@ const Header: FC = () => {
     setMenuIsActive(true);
   };
 
-  const onHandleTouchBtnClick = () => {
-    scrollTo(SectionsId.CONTACT_US);
-  };
-
   const headerClassNames = cn(styles["header"], {
     [styles["header--accent"]]: scrollTop > 0,
   });
   return (
     <>
-      <header
-        ref={headerRef}
-        id={SectionsId.HEADER}
-        className={headerClassNames}
-      >
+      <header id={SectionsId.HEADER} className={headerClassNames}>
         <div className={`container ${styles["header__wrapper"]}`}>
           <Logo />
           <div className={styles["wrapper"]}>
@@ -59,7 +49,7 @@ const Header: FC = () => {
             />
 
             <UIButton
-              onClick={onHandleTouchBtnClick}
+              href={`/#${SectionsId.CONTACT_US}`}
               classNames={styles["button-touch"]}
               variant="contained"
               iconSize={7}

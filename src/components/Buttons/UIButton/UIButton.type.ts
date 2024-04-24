@@ -7,4 +7,5 @@ export type UIButtonProps = {
   icon?: string;
   iconSize?: number;
   iconClassNames?: string;
+  href?: string;
 } & Partial<ButtonHTMLAttributes<HTMLButtonElement>>;

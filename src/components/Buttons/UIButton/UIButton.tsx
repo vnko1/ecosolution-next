@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 import cn from "classnames";
 
 import { Icon } from "@/components";
@@ -12,6 +13,7 @@ const UIButton: FC<UIButtonProps> = ({
   icon,
   iconSize,
   iconClassNames,
+  href,
   ...props
 }) => {
   const btnClassNames = cn(
@@ -26,7 +28,13 @@ const UIButton: FC<UIButtonProps> = ({
     classNames
   );
   if (variant === "icon")
-    return (
+    return href ? (
+      <Link href={href} className={btnClassNames}>
+        <span className={iconClassNames}>
+          {icon ? <Icon icon={icon} size={iconSize} /> : null}
+        </span>
+      </Link>
+    ) : (
       <button {...props} className={btnClassNames}>
         <span className={iconClassNames}>
           {icon ? <Icon icon={icon} size={iconSize} /> : null}
@@ -34,7 +42,16 @@ const UIButton: FC<UIButtonProps> = ({
       </button>
     );
 
-  return (
+  return href ? (
+    <Link href={href} className={btnClassNames}>
+      {children}
+      {icon ? (
+        <span className={iconClassNames}>
+          <Icon icon={icon} size={iconSize} />
+        </span>
+      ) : null}
+    </Link>
+  ) : (
     <button {...props} className={btnClassNames}>
       {children}
       {icon ? (
