@@ -1,0 +1,19 @@
+.values-list {
+  @apply grid grid-rows-2 grid-cols-2 gap-2-md tablet:gap-2-xs tablet:grid-cols-4 laptop:gap-4-xl;
+
+  &__item {
+    @apply overflow-hidden min-h-[198px] laptop:min-h-[340px];
+
+    &.image-item {
+      @apply hidden tablet:block relative col-span-2;
+
+      &:last-child {
+        @apply laptop:absolute -top-[75px];
+      }
+
+      & > img {
+        @apply h-auto;
+      }
+    }
+  }
+}

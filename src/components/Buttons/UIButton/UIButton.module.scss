@@ -1,0 +1,51 @@
+.button {
+  @apply rounded-[500px] transition-colors duration-150 outline-none max-h-4-xs justify-center items-center;
+
+  &.contained {
+    @apply bg-green text-darkGreen py-1-xs px-1-lg;
+
+    & > span {
+      @apply relative flex items-center justify-center bg-darkGreen  rounded-[50px] text-green transition-colors duration-150;
+    }
+
+    &:hover,
+    &:focus {
+      @apply bg-darkGreen text-green;
+
+      & > span {
+        @apply bg-green text-darkGreen;
+      }
+    }
+  }
+
+  &.icon {
+    @apply flex w-[40px] h-[40px];
+    & > span {
+      @apply flex justify-center items-center transition-colors duration-150;
+    }
+  }
+
+  &.text {
+    @apply bg-transparent flex gap-0-md;
+
+    & > span {
+      @apply relative;
+    }
+  }
+
+  &.outlined {
+    @apply flex bg-transparent py-1-xs pl-1-lg pr-0-sm border border-green gap-[12px];
+    & > span {
+      @apply relative w-[32px] h-[32px] flex items-center justify-center bg-green text-primary  rounded-[500px] transition-colors duration-150;
+    }
+
+    &:hover,
+    &:focus {
+      @apply bg-darkGreen border-darkGreen text-green;
+    }
+
+    &:disabled {
+      @apply bg-gray-400 border-gray-400 text-white;
+    }
+  }
+}

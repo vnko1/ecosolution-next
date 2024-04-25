@@ -1,0 +1,29 @@
+.field {
+  &__label {
+    @apply relative flex flex-col gap-0-md laptop:gap-1-sm;
+  }
+
+  &__input {
+    @apply outline-none bg-transparent border-b border-b-green pb-0-md text-[18px] tracking-[-0.72px];
+
+    &::placeholder {
+      @apply text-[#BDBDBD];
+    }
+
+    &.textarea {
+      @apply overflow-y-auto resize-none h-[146px] laptop:h-[148px];
+    }
+
+    &.error {
+      @apply border-b-red;
+    }
+  }
+}
+
+.label-text {
+  @apply tracking-[-0.64px];
+}
+
+.error-text {
+  @apply text-red absolute text-right text-xs tracking-[-0.48px] right-0 -bottom-2-xs laptop:-bottom-2-md;
+}

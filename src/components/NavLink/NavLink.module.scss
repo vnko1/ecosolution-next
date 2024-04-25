@@ -1,0 +1,13 @@
+.link {
+  @apply inline-flex items-center  gap-0-md text-lg tracking-[-0.8px] laptop:text-xl laptop:tracking-[-0.96px];
+  &.soc {
+    @apply p-1-sm laptop:p-0;
+  }
+
+  &:hover,
+  &:focus {
+    & > span {
+      @apply text-green duration-150 transition-colors;
+    }
+  }
+}

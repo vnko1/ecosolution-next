@@ -1,0 +1,39 @@
+.accordion {
+  @apply border-t border-t-green;
+  &.box {
+    @apply bg-transparent;
+
+    &::after {
+      content: "";
+      @apply bg-green;
+    }
+  }
+
+  &__wrapper {
+    @apply relative;
+  }
+}
+
+.wrapper {
+  &__content {
+    &.content {
+      @apply pl-2-md pr-0 tablet:pl-[44px] laptop:pl-[52px];
+    }
+  }
+}
+
+.summary {
+  @apply text-justify text-[18px] tracking-[-0.72px] laptop:text-xl laptop:tracking-[-0.96px];
+}
+
+.details {
+  @apply text-justify text-sm tracking-[-0.56px] laptop:text-base laptop:tracking-[-0.64px];
+}
+
+.icon {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 text-darkGreen text-base tablet:text-[28px];
+
+  &--accent {
+    @apply text-green;
+  }
+}

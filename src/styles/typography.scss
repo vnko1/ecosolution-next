@@ -1,0 +1,15 @@
+h1 {
+  @apply font-oswald text-[36px] leading-[36px] tablet:text-[48px] tablet:leading-[48px] laptop:text-[64px] laptop:leading-[64px] uppercase text-darkGreen;
+}
+
+h2 {
+  @apply font-oswald text-[28px] leading-[28px] tablet:text-[36px] tablet:leading-[36px] laptop:text-[48px] laptop:leading-[48px] uppercase text-darkGreen;
+}
+
+h3 {
+  @apply font-oswald text-darkGreen uppercase text-base leading-[24px] tablet:text-[18px] laptop:text-[32px];
+}
+
+p {
+  @apply text-base -tracking-[0.64px];
+}

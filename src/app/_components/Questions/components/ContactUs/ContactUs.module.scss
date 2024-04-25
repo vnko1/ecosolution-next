@@ -1,0 +1,15 @@
+.contact-us {
+  @apply flex flex-col gap-1-sm items-center;
+}
+
+.text {
+  @apply text-[18px] tracking-[-0.72px] laptop:text-xl laptop:tracking-[-0.96px];
+}
+
+.button {
+  @apply flex gap-[12px];
+}
+
+.icon {
+  @apply w-[14px] h-[14px] -rotate-90;
+}

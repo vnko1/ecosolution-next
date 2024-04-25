@@ -1,0 +1,14 @@
+.contacts {
+  @apply inline-flex flex-col gap-2-md max-w-[280px] tablet:max-w-[250px] laptop:gap-3-sm laptop:max-w-full;
+}
+
+.links {
+  @apply inline-flex flex-col gap-1-sm;
+  &.soc {
+    @apply flex-row gap-0-md;
+  }
+}
+
+.label {
+  @apply mb-0-md laptop:mb-1-lg;
+}

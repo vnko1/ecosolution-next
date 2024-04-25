@@ -1,0 +1,50 @@
+.case {
+  @apply w-full h-full;
+
+  &__image-thumb {
+    @apply overflow-hidden h-full max-h-[294px] tablet:max-h-[192px] laptop:max-h-[335px];
+
+    & > img {
+      @apply h-full w-full;
+    }
+  }
+  &__content {
+    @apply bg-[#EAEDF1] p-1-sm laptop:px-4-xl laptop:py-3-lg;
+  }
+}
+
+.content {
+  &__top {
+    @apply border-b min-h-[108px] laptop:min-h-[125px] border-b-green pb-2-xs tablet:pb-1-lg flex justify-between items-center;
+  }
+
+  &__bottom {
+    @apply pt-1-sm flex justify-between items-center;
+
+    & > p {
+      @apply tracking-[-0.48px] text-xs tablet:tracking-[-0.56px] tablet:text-sm laptop:text-base laptop:tracking-[-0.64px];
+    }
+  }
+}
+.title {
+  @apply w-2/3 text-[18px] tracking-[-0.72px] tablet:text-lg tablet:tracking-[-0.8px] laptop:text-[24px] laptop:tracking-[-0.96px];
+}
+
+.button {
+  &.button-icon {
+    @apply bg-green text-darkGreen max-h-[60px] h-[60px] w-[60px];
+
+    &:hover,
+    &:focus {
+      @apply bg-darkGreen;
+
+      & > span {
+        @apply text-green;
+      }
+    }
+  }
+
+  &__icon {
+    @apply rotate-[135deg];
+  }
+}
