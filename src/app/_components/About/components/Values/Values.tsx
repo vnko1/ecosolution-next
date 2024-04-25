@@ -36,8 +36,10 @@ const Values: FC = () => {
                 src={el.image}
                 alt={el.alt}
                 priority={true}
-                width={596}
-                height={398}
+                fill
+                sizes="(max-width: 1439px) 344px, 596px"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNUZmGqBwABJQCqEJ2nngAAAABJRU5ErkJggg=="
               />
             </li>
           );

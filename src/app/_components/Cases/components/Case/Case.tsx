@@ -10,7 +10,15 @@ const Case: FC<CaseProps> = ({ image, alt, title, text, date }) => {
   return (
     <div className={styles["case"]}>
       <div className={styles["case__image-thumb"]}>
-        <Image src={image} alt={alt} loading="lazy" width={596} height={336} />
+        <Image
+          src={image}
+          alt={alt}
+          loading="lazy"
+          width={596}
+          height={336}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNUZmGqBwABJQCqEJ2nngAAAABJRU5ErkJggg=="
+        />
       </div>
       <div className={styles["case__content"]}>
         <div className={styles["content__top"]}>

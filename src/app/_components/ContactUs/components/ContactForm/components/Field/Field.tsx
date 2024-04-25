@@ -51,6 +51,7 @@ const Field: FC<FieldProps> = ({
           id={id}
           type={type}
           placeholder={placeholder}
+          autoComplete="on"
           className={formClassnames(styles["field__input"])}
           onChange={handleChange}
         />
@@ -59,6 +60,7 @@ const Field: FC<FieldProps> = ({
           {...props}
           {...register(name)}
           id={id}
+          autoComplete="on"
           placeholder={placeholder}
           className={formClassnames(styles["field__input"], styles["textarea"])}
           onChange={handleChange}
