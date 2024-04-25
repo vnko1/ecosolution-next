@@ -1,3 +1,4 @@
+"use client";
 import React, { ChangeEvent, FC } from "react";
 import { useFormContext } from "react-hook-form";
 import cn from "classnames";
@@ -12,11 +13,9 @@ const Field: FC<FieldProps> = ({
   label,
   name,
   type = "text",
-  value,
   component = "input",
   placeholder,
-  inputProps,
-  textareaProps,
+  ...props
 }) => {
   const { register, setValue, getFieldState } = useFormContext();
   const { error } = getFieldState(name);
@@ -47,21 +46,19 @@ const Field: FC<FieldProps> = ({
       <span className={styles["label-text"]}>{label}</span>
       {component === "input" ? (
         <input
-          {...inputProps}
+          {...props}
           {...register(name)}
           id={id}
           type={type}
-          value={value}
           placeholder={placeholder}
           className={formClassnames(styles["field__input"])}
           onChange={handleChange}
         />
       ) : (
         <textarea
-          {...textareaProps}
+          {...props}
           {...register(name)}
           id={id}
-          value={value}
           placeholder={placeholder}
           className={formClassnames(styles["field__input"], styles["textarea"])}
           onChange={handleChange}

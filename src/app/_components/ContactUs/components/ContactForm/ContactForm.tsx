@@ -1,16 +1,17 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC, useLayoutEffect, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { getValuesFromLS, removeDataFromLS } from "@/utils";
-import { IconEnum } from "@/types";
+import { FormValues, IconEnum } from "@/types";
 import { UIButton } from "@/components";
 
 import { Field } from "./components";
 import { validationSchema } from "./validationSchema";
-import { FormFields, FormValues } from "./ContactForm.type";
+import { FormFields } from "./ContactForm.type";
 import styles from "./ContactForm.module.scss";
+import { submitHandler } from "@/lib/actions";
 
 const formsData: FormFields = {
   fullName: {
@@ -46,13 +47,13 @@ const ContactForm: FC = () => {
 
   const methods = useForm<FormValues>({
     resolver: yupResolver(validationSchema),
-    mode: "onChange",
+    mode: "all",
     values: values || initialValues,
     reValidateMode: "onChange",
   });
-  const { reset, handleSubmit } = methods;
+  const { reset, handleSubmit, formState } = methods;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setValues(
       getValuesFromLS<FormValues>(
         initialValues,
@@ -64,14 +65,13 @@ const ContactForm: FC = () => {
     );
   }, []);
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("🚀 ~ data:", data);
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    await submitHandler(data);
     setShowUMessage(true);
     removeDataFromLS("fullName", "email", "phone", "message");
     reset(initialValues);
     setTimeout(() => {
       setShowUMessage(false);
-      reset();
     }, 2000);
   };
 
@@ -79,33 +79,30 @@ const ContactForm: FC = () => {
     <div className={styles["contact-form"]}>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className={styles["form__field"]}>
-            {keyValues.map((el) => (
-              <Field
-                key={el}
-                id={el}
-                name={el}
-                label={formsData[el as keyof FormValues].label}
-                placeholder={formsData[el as keyof FormValues].placeholder}
-                component={formsData[el as keyof FormValues].component}
-              />
-            ))}
-          </div>
-          <div className={styles["buttons"]}>
-            <UIButton
-              variant="outlined"
-              type="submit"
-              icon={IconEnum.ARROW}
-              iconClassNames={styles["icon"]}
-              iconSize={16}
-              classNames={styles["button"]}
-            >
-              Send
-            </UIButton>
-            {showUMessage ? (
-              <p className={styles["message"]}>Your message was sent</p>
-            ) : null}
-          </div>
+          {keyValues.map((el) => (
+            <Field
+              key={el}
+              id={el}
+              name={el}
+              label={formsData[el as keyof FormValues].label}
+              placeholder={formsData[el as keyof FormValues].placeholder}
+              component={formsData[el as keyof FormValues].component}
+            />
+          ))}
+          <UIButton
+            variant="outlined"
+            type="submit"
+            icon={IconEnum.ARROW}
+            iconClassNames={styles["icon"]}
+            iconSize={16}
+            classNames={styles["button"]}
+            disabled={!formState.isValid}
+          >
+            Send
+          </UIButton>
+          {showUMessage ? (
+            <p className={styles["message"]}>Your message was sent</p>
+          ) : null}
         </form>
       </FormProvider>
     </div>

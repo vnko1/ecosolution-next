@@ -1,10 +1,3 @@
-export type FormValues = {
-  fullName: string;
-  email: string;
-  phone: string;
-  message?: string;
-};
-
 export type FormFields = {
   fullName: {
     label: string;

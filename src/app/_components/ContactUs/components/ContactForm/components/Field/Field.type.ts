@@ -1,5 +1,3 @@
-import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
-
 export type FieldProps = {
   id: string;
   label: string;
@@ -9,6 +7,4 @@ export type FieldProps = {
   value?: string;
   classNames?: string;
   placeholder: string;
-  inputProps?: Partial<InputHTMLAttributes<HTMLInputElement>>;
-  textareaProps?: Partial<TextareaHTMLAttributes<HTMLTextAreaElement>>;
 };

@@ -1,13 +1,5 @@
 .form {
-  @apply bg-lightGrey px-1-sm py-3-lg tablet:px-2-md laptop:p-4-xl;
-
-  &__field {
-    @apply flex flex-col gap-2-xl laptop:gap-3-sm;
-  }
-
-  &__buttons {
-    @apply relative;
-  }
+  @apply bg-lightGrey px-1-sm py-3-lg tablet:px-2-md laptop:p-4-xl flex flex-col gap-2-xl laptop:gap-3-sm;
 }
 
 .button {
@@ -18,5 +10,5 @@
 }
 
 .message {
-  @apply absolute -bottom-6 right-0;
+  @apply ml-auto text-right;
 }
